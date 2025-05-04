@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Empresa TI</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+         <img src="placeholder_logo.png" alt="Logo da Empresa" id="logo-small">
+         <h1>Login de Clientes</h1>
+    </header>
+    <main>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Login (E-mail):</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+             <div id="error-message" class="error"></div>
+            <div class="form-actions">
+                <button type="submit">Realizar Login</button>
+                <button type="button" id="clear-button">Limpar</button>
+            </div>
+            <div class="form-links">
+                 <a href="change_password.html">Esqueceu a senha?</a>
+                 <a href="register.html">Não tem conta? Cadastre-se</a>
+            </div>
+        </form>
+    </main>
+     <footer class="main-footer">
+        <p>&copy; 2025 Empresa TI. Todos os direitos reservados.</p>
+     </footer>
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

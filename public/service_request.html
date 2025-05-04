@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitar Serviço - Empresa TI</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="placeholder_logo.png" alt="Logo da Empresa" id="logo-small" />
+      <h1>Solicitação de Serviços de TI</h1>
+    </header>
+    <main>
+      <section id="user-info">
+        <h2>Dados do Usuário</h2>
+        <p>Nome: <span id="user-name">Nome Fixo do Usuário</span></p>
+        <p>Login: <span id="user-email">email.fixo@usuario.com</span></p>
+      </section>
+
+      <section id="past-requests">
+        <h2>Minhas Solicitações</h2>
+        <table id="requests-table">
+          <thead>
+            <tr>
+              <th>Data Pedido</th>
+              <th>Nº Solicitação</th>
+              <th>Serviço</th>
+              <th>Status</th>
+              <th>Preço (R$)</th>
+              <th>Data Prevista</th>
+              <th>Ação</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+
+      <section id="new-request">
+        <h2>Nova Solicitação</h2>
+        <form id="new-request-form">
+          <div class="form-group">
+            <label for="service-type">Serviço de TI:</label>
+            <select id="service-type" name="service-type">
+              <option value="">Selecione...</option>
+              <option value="consultoria" data-price="500" data-deadline="5">
+                Consultoria Rede
+              </option>
+              <option value="manutencao" data-price="800" data-deadline="10">
+                Manutenção Servidor
+              </option>
+              <option
+                value="desenvolvimento"
+                data-price="1500"
+                data-deadline="20"
+              >
+                Desenvolvimento Software
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <p>Preço: R$ <span id="service-price">--</span></p>
+          </div>
+          <div class="form-group">
+            <p>
+              Prazo de Atendimento: <span id="service-deadline">--</span> dias
+            </p>
+          </div>
+          <div class="form-group">
+            <p>
+              Data Prevista de Atendimento:
+              <span id="service-predicted-date">--</span>
+            </p>
+          </div>
+          <div class="form-group">
+            <p>Status: <span id="service-status">EM ELABORAÇÃO</span></p>
+          </div>
+          <div id="error-message" class="error"></div>
+          <div class="form-actions">
+            <button type="submit">Incluir Solicitação</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <p>&copy; 2025 Empresa TI. Todos os direitos reservados.</p>
+    </footer>
+    <script src="js/common.js"></script>
+    <script src="js/service_request.js"></script>
+  </body>
+</html>

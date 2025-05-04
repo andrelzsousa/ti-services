@@ -1,0 +1,223 @@
+/* Basic Reset & Body */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif; /* Default font */
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+}
+
+/* Layout using Flexbox (Example CSS Layout Technique) */
+.container {
+  /* Optional: Wrap main content */
+  max-width: 1100px;
+  margin: auto;
+  overflow: auto; /* Or hidden */
+  padding: 0 20px;
+}
+
+header.main-header,
+footer.main-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center; /* Basic alignment */
+}
+
+header.main-header nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+header.main-header nav a:hover {
+  color: #ccc;
+}
+
+#logo {
+  max-width: 150px; /* Adjust as needed */
+  height: auto;
+  margin-bottom: 10px;
+}
+#logo-small {
+  max-width: 100px;
+  height: auto;
+  margin-bottom: 5px;
+}
+
+/* Typography & Text Styles */
+h1,
+h2,
+h3 {
+  font-family: "Arial", sans-serif; /* Different font for headers [cite: 8] */
+  margin-bottom: 0.75rem;
+  color: #555;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* Form Styling */
+form {
+  background: #fff;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px; /* Limit form width */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"],
+.form-group input[type="tel"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-actions button {
+  background-color: #5cb85c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.form-actions button:hover {
+  background-color: #4cae4c;
+}
+
+.form-actions button#clear-button,
+.form-actions button#back-button {
+  background-color: #f0ad4e;
+}
+.form-actions button#clear-button:hover,
+.form-actions button#back-button:hover {
+  background-color: #ec971f;
+}
+
+.form-links a {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.password-instructions {
+  font-size: 0.9em;
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.password-instructions ul {
+  list-style-position: inside;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Accumulation/Override example */
+  margin-bottom: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #ddd; /* Override example */
+  padding: 8px;
+  text-align: left;
+}
+
+thead {
+  background-color: #e7e7e7; /* Header style */
+}
+
+/* Error Message Styling */
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+  min-height: 1.2em; /* Reserve space */
+}
+
+/* Specific Page Styles */
+#gallery .photo-gallery {
+  display: flex; /* Example using Flexbox for layout */
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+#gallery figure {
+  border: 1px solid #ccc;
+  padding: 5px;
+  text-align: center;
+}
+#gallery img {
+  max-width: 200px;
+  height: auto;
+}
+
+#payment-methods .payment-icon {
+  height: 30px;
+  margin: 0 5px;
+}
+
+/* Scrollbar control example (if needed for a specific long section) */
+.long-content-section {
+  max-height: 300px;
+  overflow-y: auto; /* Automatic scrollbar [cite: 8] */
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Style Accumulation/Override Examples */
+p {
+  color: #444; /* Base color */
+}
+section p {
+  /* Selector specificity */
+  color: #333; /* Overrides base color for <p> inside <section> */
+}
+
+/* Seletores Diversos */
+#logo {
+  /* ID Selector */
+  border: 2px solid blue;
+}
+.main-footer {
+  /* Class Selector */
+  border-top: 3px solid #555;
+}
+input[type="email"] {
+  /* Attribute Selector */
+  border-color: green;
+}
+nav > a {
+  /* Child Combinator */
+  font-weight: bold;
+}
+h2 + p {
+  /* Adjacent Sibling Combinator */
+  font-style: italic;
+}
