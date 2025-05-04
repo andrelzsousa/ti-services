@@ -48,7 +48,9 @@ function createHeader(title) {
   return `
     <header class="main-header">
       <div class="container">
-        <img src="/images/logo.png" alt="Logo TechSolutions" id="logo" />
+        <a href="index.html">
+          <img src="/images/logo.png" alt="Logo TechSolutions" id="logo" />
+        </a>
         <h1>${title}</h1>
         <nav>
           <a href="login.html" id="login-link" style="${
@@ -86,11 +88,22 @@ function createFooter() {
           <h3>Endereço</h3>
           <p>Av. Cais do Apolo, 77, Sala 17, Bairro do Recife, Recife - PE, CEP 50030-220</p>
         </div>
-        <div id="payment-methods">
+        <div id="address">
           <h3>Formas de Pagamento</h3>
-          <img src="placeholder_payment1.png" alt="Cartão de Crédito" class="payment-icon" />
-          <img src="placeholder_payment2.png" alt="Boleto Bancário" class="payment-icon" />
-          <img src="placeholder_payment3.png" alt="PIX" class="payment-icon" />
+          <div id="payment-methods">
+            <div class="payment-method">
+              <img src="/images/credit.png" alt="Cartão de Crédito" class="payment-icon" />
+              <p>Cartão de Crédito</p>
+            </div>
+            <div class="payment-method">
+              <img src="/images/invoice.png" alt="Boleto Bancário" class="payment-icon" />
+              <p>Boleto Bancário</p>
+            </div>
+            <div class="payment-method">
+              <img src="/images/pix.png" alt="PIX" class="payment-icon" />
+              <p>PIX</p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

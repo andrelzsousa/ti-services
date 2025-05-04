@@ -277,8 +277,15 @@ tr:hover {
 
 #payment-methods {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.4rem;
+  align-items: start;
+}
+
+.payment-method {
+  display: flex;
   align-items: center;
+  gap: 0.3rem;
 }
 
 .payment-icon {
