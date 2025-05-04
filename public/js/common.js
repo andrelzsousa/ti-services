@@ -16,6 +16,7 @@ function displayError(elementId, message) {
   const errorElement = document.getElementById(elementId);
   if (errorElement) {
     errorElement.textContent = message;
+    errorElement.classList.add("show");
   } else {
     alert(message);
   }
@@ -25,6 +26,7 @@ function clearError(elementId) {
   const errorElement = document.getElementById(elementId);
   if (errorElement) {
     errorElement.textContent = "";
+    errorElement.classList.remove("show");
   }
 }
 
