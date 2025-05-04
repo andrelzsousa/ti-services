@@ -166,8 +166,11 @@ app.post("/api/login", (req, res) => {
     try {
       const match = await bcrypt.compare(password, user.password_hash);
       if (match) {
-        // NOTE: Generate session/token here in real app
-        return res.json({ success: true, message: "Login bem-sucedido" });
+        return res.json({
+          success: true,
+          message: "Login bem-sucedido",
+          user: user,
+        });
       } else {
         return res
           .status(401)
@@ -188,12 +191,17 @@ app.post("/api/login", (req, res) => {
 app.get("/api/service-requests", (req, res) => {
   const userEmail = req.query.userEmail; // Get email from query parameter
 
+  if (!userEmail) {
+    return res.status(401).json({
+      success: false,
+      message: "Usuário não autenticado. Faça login novamente.",
+    });
+  }
+
   getUserIdByEmail(userEmail, (err, userId) => {
     if (err) {
-      // If user not found based on email, return empty list or error
       console.log(`Cannot get requests: ${err.message}`);
       return res.status(404).json({ success: false, message: err.message });
-      // Alternatively, return empty list: return res.json([]);
     }
 
     const sql =
@@ -206,7 +214,7 @@ app.get("/api/service-requests", (req, res) => {
           message: "Erro ao buscar solicitações de serviço.",
         });
       }
-      res.json(rows); // Send the list of requests
+      res.json(rows);
     });
   });
 });
@@ -222,6 +230,13 @@ app.post("/api/service-requests", (req, res) => {
     predicted_date,
     request_date,
   } = req.body;
+
+  if (!userEmail) {
+    return res.status(401).json({
+      success: false,
+      message: "Usuário não autenticado. Faça login novamente.",
+    });
+  }
 
   if (
     !service_name ||
@@ -279,8 +294,15 @@ app.post("/api/service-requests", (req, res) => {
 // DELETE a service request
 app.delete("/api/service-requests/:id", (req, res) => {
   const requestId = req.params.id;
-  // Get user email from request body for verification (placeholder method)
   const userEmail = req.body.userEmail;
+
+  if (!userEmail) {
+    return res.status(401).json({
+      success: false,
+      message: "Usuário não autenticado. Faça login novamente.",
+    });
+  }
+
   console.log(
     `Attempting to delete request ${requestId} for user ${userEmail}`
   );

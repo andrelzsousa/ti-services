@@ -43,10 +43,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const result = await response.json();
 
+        console.log(result);
+
         if (response.ok && result.success) {
           alert("Login realizado com sucesso!");
           localStorage.setItem("userLoggedIn", "true");
           localStorage.setItem("userEmail", email);
+          localStorage.setItem("userName", result.user.name);
           window.location.href = "index.html";
         } else {
           displayError(

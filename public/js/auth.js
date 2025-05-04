@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.removeItem("userLoggedIn");
       localStorage.removeItem("userEmail");
       localStorage.removeItem("userName");
-
+      
       // Redirecionar para a página inicial
       window.location.href = "index.html";
     });
   }
-});
+}); 

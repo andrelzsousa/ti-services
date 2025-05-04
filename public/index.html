@@ -12,11 +12,14 @@
         <img src="placeholder_logo.png" alt="Logo TechSolutions" id="logo" />
         <h1>Transformando Negócios com Tecnologia</h1>
         <nav>
-          <a href="login.html">Login Cliente</a>
-          <a href="register.html">Cadastrar Cliente</a>
+          <a href="login.html" id="login-link">Login Cliente</a>
+          <a href="register.html" id="register-link">Cadastrar Cliente</a>
           <a href="service_request.html" id="service-link" style="display: none"
             >Solicitar Serviço</a
           >
+          <button id="logout-btn" class="logout-btn" style="display: none">
+            Sair
+          </button>
         </nav>
       </div>
     </header>
@@ -182,5 +185,6 @@
     </footer>
 
     <script src="js/index.js"></script>
+    <script src="js/auth.js"></script>
   </body>
 </html>

@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Verifica se o usuário está logado
+  const isLoggedIn = localStorage.getItem("userLoggedIn") === "true";
+  if (!isLoggedIn) {
+    window.location.href = "login.html";
+    alert("Você precisa estar logado para acessar esta página.");
+    return;
+  }
+
   const serviceSelect = document.getElementById("service-type");
   const priceSpan = document.getElementById("service-price");
   const deadlineSpan = document.getElementById("service-deadline");
@@ -10,11 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const userEmailSpan = document.getElementById("user-email");
 
   const loggedInUserEmail = localStorage.getItem("userEmail");
+  const loggedInUserName = localStorage.getItem("userName");
+
   if (loggedInUserEmail) {
     userEmailSpan.textContent = loggedInUserEmail;
   } else {
     console.warn(
       "User email not found in localStorage. Service requests might not work correctly."
+    );
+  }
+
+  if (loggedInUserName) {
+    userNameSpan.textContent = loggedInUserName;
+  } else {
+    console.warn(
+      "User name not found in localStorage. Service requests might not work correctly."
     );
   }
 

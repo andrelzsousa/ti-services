@@ -9,14 +9,21 @@
   <body>
     <header class="main-header">
       <div class="container">
-        <img
-          src="placeholder_logo.png"
-          alt="Logo TechSolutions"
-          id="logo-small"
-        />
+        <img src="placeholder_logo.png" alt="Logo TechSolutions" id="logo" />
         <h1>Cadastro de Clientes</h1>
+        <nav>
+          <a href="login.html" id="login-link">Login Cliente</a>
+          <a href="register.html" id="register-link">Cadastrar Cliente</a>
+          <a href="service_request.html" id="service-link" style="display: none"
+            >Solicitar Serviço</a
+          >
+          <button id="logout-btn" class="logout-btn" style="display: none">
+            Sair
+          </button>
+        </nav>
       </div>
     </header>
+
     <main class="container">
       <form id="register-form">
         <h2>Criar Nova Conta</h2>
@@ -148,9 +155,7 @@
             <option value="pos_graduado">Pós-graduado</option>
           </select>
         </div>
-
         <div id="error-message" class="error"></div>
-
         <div class="form-actions">
           <button type="submit">Cadastrar</button>
           <button type="button" id="clear-button">Limpar</button>
@@ -158,12 +163,51 @@
         </div>
       </form>
     </main>
+
     <footer class="main-footer">
       <div class="container">
-        <p>&copy; 2024 TechSolutions. Todos os direitos reservados.</p>
+        <div id="contact">
+          <h3>Contato</h3>
+          <ul>
+            <li>Telefone Fixo: (81) 3333-4444</li>
+            <li>WhatsApp: (81) 99999-8888</li>
+            <li>
+              <a href="mailto:contato@techsolutions.com.br"
+                >contato@techsolutions.com.br</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div id="address">
+          <h3>Endereço</h3>
+          <p>
+            Av. Cais do Apolo, 222, 16º andar, Bairro do Recife, Recife - PE,
+            CEP 50030-220
+          </p>
+        </div>
+        <div id="payment-methods">
+          <h3>Formas de Pagamento</h3>
+          <img
+            src="placeholder_payment1.png"
+            alt="Cartão de Crédito"
+            class="payment-icon"
+          />
+          <img
+            src="placeholder_payment2.png"
+            alt="Boleto Bancário"
+            class="payment-icon"
+          />
+          <img src="placeholder_payment3.png" alt="PIX" class="payment-icon" />
+        </div>
       </div>
     </footer>
+
     <script src="js/common.js"></script>
     <script src="js/register.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        initCommonElements("Cadastro de Clientes");
+      });
+    </script>
   </body>
 </html>
