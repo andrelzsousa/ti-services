@@ -48,7 +48,7 @@ function createHeader(title) {
   return `
     <header class="main-header">
       <div class="container">
-        <img src="placeholder_logo.png" alt="Logo TechSolutions" id="logo" />
+        <img src="/images/logo.png" alt="Logo TechSolutions" id="logo" />
         <h1>${title}</h1>
         <nav>
           <a href="login.html" id="login-link" style="${
@@ -84,7 +84,7 @@ function createFooter() {
         </div>
         <div id="address">
           <h3>Endereço</h3>
-          <p>Av. Cais do Apolo, 222, 16º andar, Bairro do Recife, Recife - PE, CEP 50030-220</p>
+          <p>Av. Cais do Apolo, 77, Sala 17, Bairro do Recife, Recife - PE, CEP 50030-220</p>
         </div>
         <div id="payment-methods">
           <h3>Formas de Pagamento</h3>

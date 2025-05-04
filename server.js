@@ -6,6 +6,8 @@ const bcrypt = require("bcrypt");
 const app = express();
 const port = 3000;
 
+app.use(express.static(path.join(__dirname, "public")));
+
 // --- Database Setup ---
 const dbPath = path.resolve(__dirname, "database.db");
 const db = new sqlite3.Database(dbPath, (err) => {
