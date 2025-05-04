@@ -1,91 +1,169 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - Empresa TI</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-     <header>
-         <img src="placeholder_logo.png" alt="Logo da Empresa" id="logo-small">
-         <h1>Cadastro de Clientes</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - TechSolutions</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <img
+          src="placeholder_logo.png"
+          alt="Logo TechSolutions"
+          id="logo-small"
+        />
+        <h1>Cadastro de Clientes</h1>
+      </div>
     </header>
-     <main>
-        <form id="register-form">
-            <div class="form-group">
-                <label for="email">E-mail (Login):</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-             <div class="form-group">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-             <div class="form-group">
-                <label for="confirm-password">Confirmar Senha:</label>
-                <input type="password" id="confirm-password" name="confirm-password" required>
-            </div>
-             <div class="form-group password-instructions">
-                <p><strong>Regras da Senha:</strong></p>
-                <ul>
-                    <li>Pelo menos 6 caracteres.</li>
-                    <li>Pelo menos 1 número (0-9).</li>
-                    <li>Pelo menos 1 letra maiúscula (A-Z).</li>
-                    <li>Pelo menos 1 caractere especial permitido: @ # $ % & ! ? / + = .</li>
-                    <li>Caracteres NÃO permitidos: { } [ ] &lt; &gt; ;</li>
-                 </ul>
-            </div>
-            <div class="form-group">
-                <label for="name">Nome Completo:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="cpf">CPF:</label>
-                <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00" maxlength="14">
-            </div>
-             <div class="form-group">
-                <label for="birthdate">Data de Nascimento:</label>
-                <input type="date" id="birthdate" name="birthdate" required>
-            </div>
-             <div class="form-group">
-                <label for="phone">Telefone Celular/WhatsApp (Opcional):</label>
-                <input type="tel" id="phone" name="phone" placeholder="(XX) XXXXX-XXXX">
-            </div>
-             <div class="form-group">
-                <label>Estado Civil:</label>
-                <input type="radio" id="single" name="marital_status" value="solteiro" checked>
-                <label for="single">Solteiro(a)</label>
-                <input type="radio" id="married" name="marital_status" value="casado">
-                <label for="married">Casado(a)</label>
-                 <input type="radio" id="divorced" name="marital_status" value="divorciado">
-                <label for="divorced">Divorciado(a)</label>
-                <input type="radio" id="widowed" name="marital_status" value="viuvo">
-                <label for="widowed">Viúvo(a)</label>
-            </div>
-             <div class="form-group">
-                <label for="education">Escolaridade:</label>
-                <select id="education" name="education">
-                    <option value="1_incompleto">1º grau incompleto</option>
-                    <option value="1_completo">1º grau completo</option>
-                    <option value="2_completo" selected>2º grau completo</option>
-                    <option value="superior">Nível superior</option>
-                    <option value="pos_graduado">Pós-graduado</option>
-                </select>
-            </div>
+    <main class="container">
+      <form id="register-form">
+        <h2>Criar Nova Conta</h2>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Digite seu e-mail"
+          />
+        </div>
+        <div class="form-group">
+          <label for="password">Senha:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Digite sua senha"
+          />
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirmar Senha:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+            placeholder="Confirme sua senha"
+          />
+        </div>
+        <div class="form-group password-instructions">
+          <h3>Requisitos da Senha:</h3>
+          <ul>
+            <li>Pelo menos 6 caracteres</li>
+            <li>Pelo menos 1 número (0-9)</li>
+            <li>Pelo menos 1 letra maiúscula (A-Z)</li>
+            <li>
+              Pelo menos 1 caractere especial permitido: @ # $ % & ! ? / + = .
+            </li>
+            <li>Caracteres NÃO permitidos: { } [ ] &lt; &gt; ;</li>
+          </ul>
+        </div>
+        <div class="form-group">
+          <label for="name">Nome Completo:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Digite seu nome completo"
+          />
+        </div>
+        <div class="form-group">
+          <label for="cpf">CPF:</label>
+          <input
+            type="text"
+            id="cpf"
+            name="cpf"
+            required
+            placeholder="000.000.000-00"
+            maxlength="14"
+          />
+        </div>
+        <div class="form-group">
+          <label for="birthdate">Data de Nascimento:</label>
+          <input type="date" id="birthdate" name="birthdate" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone Celular/WhatsApp (Opcional):</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="(XX) XXXXX-XXXX"
+          />
+        </div>
+        <div class="form-group">
+          <label>Estado Civil:</label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input
+                type="radio"
+                id="single"
+                name="marital_status"
+                value="solteiro"
+                checked
+              />
+              <span>Solteiro(a)</span>
+            </label>
+            <label class="radio-label">
+              <input
+                type="radio"
+                id="married"
+                name="marital_status"
+                value="casado"
+              />
+              <span>Casado(a)</span>
+            </label>
+            <label class="radio-label">
+              <input
+                type="radio"
+                id="divorced"
+                name="marital_status"
+                value="divorciado"
+              />
+              <span>Divorciado(a)</span>
+            </label>
+            <label class="radio-label">
+              <input
+                type="radio"
+                id="widowed"
+                name="marital_status"
+                value="viuvo"
+              />
+              <span>Viúvo(a)</span>
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="education">Escolaridade:</label>
+          <select id="education" name="education">
+            <option value="1_incompleto">1º grau incompleto</option>
+            <option value="1_completo">1º grau completo</option>
+            <option value="2_completo" selected>2º grau completo</option>
+            <option value="superior">Nível superior</option>
+            <option value="pos_graduado">Pós-graduado</option>
+          </select>
+        </div>
 
-            <div id="error-message" class="error"></div>
+        <div id="error-message" class="error"></div>
 
-            <div class="form-actions">
-                <button type="submit">Incluir</button>
-                <button type="button" id="clear-button">Limpar</button>
-                <button type="button" id="back-button">Voltar</button>
-            </div>
-        </form>
+        <div class="form-actions">
+          <button type="submit">Cadastrar</button>
+          <button type="button" id="clear-button">Limpar</button>
+          <button type="button" id="back-button">Voltar</button>
+        </div>
+      </form>
     </main>
     <footer class="main-footer">
-         <p>&copy; 2025 Empresa TI. Todos os direitos reservados.</p>
-     </footer>
+      <div class="container">
+        <p>&copy; 2024 TechSolutions. Todos os direitos reservados.</p>
+      </div>
+    </footer>
     <script src="js/common.js"></script>
     <script src="js/register.js"></script>
-</body>
+  </body>
 </html>
