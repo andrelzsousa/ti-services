@@ -185,6 +185,99 @@ app.post("/api/login", (req, res) => {
   });
 });
 
+// Endpoint para alterar senha
+app.post("/api/change-password", async (req, res) => {
+  const { email, newPassword } = req.body;
+
+  if (!email || !newPassword) {
+    return res.status(400).json({
+      success: false,
+      message: "E-mail e nova senha são obrigatórios.",
+    });
+  }
+
+  try {
+    // Verificar se o usuário existe
+    db.get(
+      "SELECT * FROM users WHERE email = ?",
+      [email],
+      async (err, user) => {
+        if (err) {
+          console.error("Erro ao buscar usuário:", err);
+          return res.status(500).json({
+            success: false,
+            message: "Erro interno do servidor.",
+          });
+        }
+
+        if (!user) {
+          return res.status(404).json({
+            success: false,
+            message: "Usuário não encontrado.",
+          });
+        }
+
+        // Gerar hash da nova senha
+        const saltRounds = 10;
+        const password_hash = await bcrypt.hash(newPassword, saltRounds);
+
+        // Atualizar a senha do usuário
+        db.run(
+          "UPDATE users SET password_hash = ? WHERE email = ?",
+          [password_hash, email],
+          function (err) {
+            if (err) {
+              console.error("Erro ao atualizar senha:", err);
+              return res.status(500).json({
+                success: false,
+                message: "Erro ao atualizar senha.",
+              });
+            }
+
+            res.json({
+              success: true,
+              message: "Senha alterada com sucesso.",
+            });
+          }
+        );
+      }
+    );
+  } catch (error) {
+    console.error("Erro ao processar alteração de senha:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Erro interno do servidor.",
+    });
+  }
+});
+
+// Endpoint para verificar se o e-mail existe
+app.post("/api/check-email", (req, res) => {
+  const { email } = req.body;
+
+  if (!email) {
+    return res.status(400).json({
+      success: false,
+      message: "E-mail é obrigatório.",
+    });
+  }
+
+  db.get("SELECT email FROM users WHERE email = ?", [email], (err, user) => {
+    if (err) {
+      console.error("Erro ao verificar e-mail:", err);
+      return res.status(500).json({
+        success: false,
+        message: "Erro interno do servidor.",
+      });
+    }
+
+    res.json({
+      success: true,
+      exists: !!user,
+    });
+  });
+});
+
 // --- Service Request Routes ---
 
 // GET all requests for a specific user (identified by email for now)
