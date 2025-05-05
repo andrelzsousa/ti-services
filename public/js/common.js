@@ -51,7 +51,7 @@ function createHeader(title) {
     <header class="main-header">
       <div class="container">
         <a href="index.html">
-          <img src="/images/logo.png" alt="Logo TechSolutions" id="logo" />
+          <img src="/images/logo.png" alt="Logo Nandeco" id="logo" />
         </a>
         <h1>${title}</h1>
         <nav>
@@ -83,7 +83,7 @@ function createFooter() {
           <ul>
             <li>Telefone Fixo: (81) 3333-4444</li>
             <li>WhatsApp: (81) 99999-8888</li>
-            <li><a href="mailto:contato@techsolutions.com.br">contato@techsolutions.com.br</a></li>
+            <li><a href="mailto:contato@nandeco.com.br">contato@nandeco.com.br</a></li>
           </ul>
         </div>
         <div id="address">
